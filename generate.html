@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodTech - AI Recipe Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Recipe Generator</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generate.html">AI Recipe Generator</a></li>
+                <li><a href="explore.html">Explore Recipes</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="generator">
+        <h2>Enter Your Ingredients</h2>
+        <form action="/generate-recipe" method="post">
+            <textarea name="ingredients" placeholder="Enter ingredients separated by commas..." required></textarea>
+            <button type="submit">Generate Recipe</button>
+        </form>
+    </section>
+
+    <section class="recent-recipes">
+        <h2>Recently Generated Recipes</h2>
+        <div class="recipe-list">
+            <div class="recipe-item">
+                <h3>Pasta Primavera</h3>
+                <p>A healthy vegetable pasta made with tomatoes, zucchini, and fresh herbs.</p>
+            </div>
+            <div class="recipe-item">
+                <h3>Chickpea Salad</h3>
+                <p>A protein-packed salad with chickpeas, cucumbers, and a lemon-tahini dressing.</p>
+            </div>
+            <div class="recipe-item">
+                <h3>Spicy Stir-Fry</h3>
+                <p>A quick stir-fry with tofu, broccoli, and a tangy chili-garlic sauce.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 FoodTech. All rights reserved.</p>
+    </footer>
+</body>
+</html>
