@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodTech - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to FoodTech Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generate.html">AI Recipe Generator</a></li>
+                <li><a href="explore.html">Explore Recipes</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="dashboard">
+        <h2>Your Account</h2>
+        <div class="user-info">
+            <p id="userName">Name: Loading...</p>
+            <p id="userEmail">Email: Loading...</p>
+        </div>
+
+        <h2>Your Recipes</h2>
+        <div class="recipes-list">
+            <p>No recipes found. Start generating your first recipe!</p>
+        </div>
+
+        <h2>Actions</h2>
+        <button id="generateRecipeBtn">Generate New Recipe</button>
+    </section>
+
+    <footer>
+        <p>© 2024 FoodTech. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to populate user data on the dashboard
+        function populateUserData() {
+            const firstname = localStorage.getItem('firstname');
+            const lastname = localStorage.getItem('lastname');
+            const email = localStorage.getItem('email');
+
+            if (firstname && lastname && email) {
+                document.getElementById('userName').textContent = `Name: ${firstname} ${lastname}`;
+                document.getElementById('userEmail').textContent = `Email: ${email}`;
+            } else {
+                alert('User data not found. Please log in again.');
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Event listener for generating a new recipe
+        document.getElementById('generateRecipeBtn').addEventListener('click', function() {
+            window.location.href = 'generate.html';
+        });
+
+        // Event listener for logout
+        document.getElementById('logoutBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.clear(); // Clear localStorage data
+            window.location.href = 'login.html'; // Redirect to login
+        });
+
+        // Populate user data when the page loads
+        populateUserData();
+    </script>
+</body>
+</html>
